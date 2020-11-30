@@ -1,0 +1,4 @@
+FROM scratch
+ADD ./pgbouncer-authfile /pgbouncer-authfile
+WORKDIR /
+ENTRYPOINT ["/pgbouncer-authfile"]
