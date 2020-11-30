@@ -1,0 +1,4 @@
+FROM alpine:latest
+ADD ./pgbouncer-authfile /pgbouncer-authfile
+WORKDIR /
+ENTRYPOINT ["/pgbouncer-authfile"]
