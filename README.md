@@ -1,6 +1,6 @@
 # pgbouncer-authfile
 
-Tiny project to create md5 authentication file for pgbouncer.
+Tiny project to generate pgbouncer authentication file.
 
 ## Usage
 
