@@ -72,6 +72,4 @@ spec:
 
 ## TODO
 
-* Allow multiple username-password pairs to be specified.
-* Allow username to be specified as plain text (not in file like now).
-* Add command line option to specify password string format. -f txt|md5|scram. See [this link](https://www.pgbouncer.org/config.html#authentication-file-format) for details.
+* Add CircleCI automation to run tests and build & push images.
