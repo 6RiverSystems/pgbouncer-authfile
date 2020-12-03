@@ -10,6 +10,36 @@ Supply files with username and password using `-u` and `-p` command line options
 pgbouncer-authfile -u=./username.txt -p=./password.txt -o=./userlist.txt
 ```
 
+Plain text can be used instead of filenames:
+
+```
+pgbouncer-authfile -u=admin -p=./password.txt -o=./userlist.txt
+```
+
+Multiple usernames and passwords can be specified at the same time:
+
+```
+pgbouncer-authfile -u=admin -p=./password.txt -u=dummy -p=secret -o=./userlist.txt
+```
+
+By default passwords are written as plain text into output file:
+
+```
+$ pgbouncer-authfile -u admin -p password -u foo -p bar -u user -p secret
+"admin" "password"
+"foo" "bar"
+"user" "secret"
+```
+
+But md5 hashing can be used if required (-t option):
+
+```
+./pgbouncer-authfile -u admin -p password -u foo -p bar -u user -p secret -t md5
+"admin" "md580a19f669b02edfbc208a5386ab5036b"
+"foo" "md596948aad3fcae80c08a35c9b5958cd89"
+"user" "md520eb1b22a92b5c573dc1eb4331fc49ee"
+```
+
 ## Sample deployment as init container
 
 ```yaml
