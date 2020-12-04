@@ -20,7 +20,7 @@ var (
 	usernames flagtypes.InputData
 	passwords flagtypes.InputData
 	pwdType   string
-	out       = flagtypes.OutFile{os.Stderr}
+	out       = flagtypes.OutFile{File: os.Stderr}
 )
 
 func md5password(username, password string) string {
@@ -49,7 +49,7 @@ func main() {
 	flag.Parse()
 
 	if len(usernames) != len(passwords) {
-		log.Fatalf("Number of usernames (%d) is not equal to number of passwors (%d)", len(usernames), len(passwords))
+		log.Fatalf("Number of usernames (%d) is not equal to number of passwords (%d)", len(usernames), len(passwords))
 	}
 
 	w := bufio.NewWriter(out.File)
